@@ -1,3 +1,4 @@
+import "./addContact.css";
 import { useState } from "react";
 
 const AddContact = ({ addContactHandler }) => {
@@ -8,6 +9,10 @@ const AddContact = ({ addContactHandler }) => {
   };
 
   const submitForm = (e) => {
+    if (!contact.name || !contact.email) {
+      alert("all fields is mandatory !");
+      return;
+    }
     e.preventDefault();
     addContactHandler(contact);
     setContact({ name: "", email: "" });
