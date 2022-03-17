@@ -28,3 +28,12 @@
   height: 24px;
   margin-right: 6px;
 }
+button{
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  border: none;
+  background-color: #7c3aed;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
