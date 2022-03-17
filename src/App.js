@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import AddContact from "./components/AddContact/AddContact";
+import ContactDetail from "./components/ContactDetail/ContactDetail";
 import ContactList from "./components/ContactList/ContactList";
 
 function App() {
   const [contacts, setContacts] = useState([]);
 
   const addContactHandler = (contact) => {
-    console.log(contact);
     setContacts([
       ...contacts,
       { id: Math.ceil(Math.random() * 100), ...contact },
@@ -43,6 +43,7 @@ function App() {
             <ContactList contacts={contacts} onDelete={deleteContactHandler} />
           }
         />
+        <Route path="user/:id" element={<ContactDetail />} />
       </Routes>
       {/* <AddContact addContactHandler={addContactHandler} /> */}
       {/* <ContactList contacts={contacts} onDelete={deleteContactHandler} /> */}
