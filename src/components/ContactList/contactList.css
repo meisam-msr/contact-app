@@ -1,15 +1,37 @@
+.listWrapper {
+  display: flex;
+  justify-content: center;
+}
 .contactList {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.listHeader {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.listHeader button {
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  border: none;
+  background-color: #7c3aed;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
 .item {
   background-color: #fff;
-  width: 20rem;
+  min-width: 20rem;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px;
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
   margin-top: 20px;
@@ -27,13 +49,4 @@
   width: 24px;
   height: 24px;
   margin-right: 6px;
-}
-button{
-  cursor: pointer;
-  outline: none;
-  color: #fff;
-  border: none;
-  background-color: #7c3aed;
-  padding: 6px 12px;
-  border-radius: 6px;
 }
