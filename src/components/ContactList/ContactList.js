@@ -1,6 +1,6 @@
 import "./contactList.css";
-import userImage from "../../assets/images/user.svg";
 import { Link } from "react-router-dom";
+import Contact from "./Contact/Contact";
 
 const ContactList = ({ contacts, onDelete }) => {
   return (
@@ -8,23 +8,11 @@ const ContactList = ({ contacts, onDelete }) => {
       <div>
         <h2>Contacts</h2>
         <Link to="/add">
-          <button>Add</button>
+          <button>Add Contact</button>
         </Link>
       </div>
       {contacts.map((contact) => {
-        const { name, email, id } = contact;
-        return (
-          <div key={id} className="item">
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <img alt="user" src={userImage} />
-              <div>
-                <p>name : {name}</p>
-                <p>email : {email}</p>
-              </div>
-            </div>
-            <button onClick={() => onDelete(id)}>Delete</button>
-          </div>
-        );
+        return <Contact  key={contact.id} contact={contact} onDelete={onDelete} />;
       })}
     </section>
   );
