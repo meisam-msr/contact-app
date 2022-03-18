@@ -37,6 +37,15 @@
   border-radius: 6px;
   margin-top: 20px;
 }
+.item a {
+  text-decoration: none;
+}
+.item .link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 5px;
+}
 .item button {
   width: 60px;
   cursor: pointer;
@@ -47,7 +56,7 @@
   padding: 6px 12px;
   border-radius: 6px;
 }
-.item .editBtn{
+.item .editBtn {
   margin-right: 1rem;
   border: 1px solid #7c3aed;
   color: #7c3aed;
