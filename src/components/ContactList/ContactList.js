@@ -7,11 +7,14 @@ import deleteOneContact from "../../services/deleteContactService";
 
 const ContactList = () => {
   const [contacts, setContacts] = useState(null);
+  const [allContacts, setAllContacts] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const fetchContacts = async () => {
       const { data } = await getContacts();
       setContacts(data);
+      setAllContacts(data);
     };
     try {
       fetchContacts();
@@ -26,6 +29,23 @@ const ContactList = () => {
     } catch (error) {}
   };
 
+  const searchHandler = (e) => {
+    setSearchTerm(e.target.value);
+    const search = e.target.value;
+
+    if (search !== "") {
+      const filteredContacts = allContacts.filter((c) => {
+        return Object.values(c)
+          .join(" ")
+          .toLowerCase()
+          .includes(search.toLowerCase());
+      });
+      setContacts(filteredContacts);
+    } else {
+      setContacts(allContacts);
+    }
+  };
+
   return (
     <section className="listWrapper">
       <div className="contactList">
@@ -34,6 +54,14 @@ const ContactList = () => {
           <Link to="/add">
             <button>Add</button>
           </Link>
+        </div>
+        <div>
+          <input
+            type="text"
+            placeholder="search..."
+            value={searchTerm}
+            onChange={searchHandler}
+          />
         </div>
         {contacts ? (
           contacts.map((contact) => {

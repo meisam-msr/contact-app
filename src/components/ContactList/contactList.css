@@ -23,7 +23,18 @@
   padding: 6px 12px;
   border-radius: 6px;
 }
-
+input {
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 12px;
+  width: 15rem;
+  height: 3rem;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+input:focus {
+  border: 2px solid #7c3aed;
+}
 .item {
   background-color: #fff;
   min-width: 20rem;
