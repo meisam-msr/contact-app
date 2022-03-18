@@ -3,8 +3,9 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import getOneContact from "../../services/getOneCOntact";
+import updateContact from "../../services/updateContact";
 
-const EditContact = ({ editContactHandler }) => {
+const EditContact = () => {
   const [contact, setContact] = useState({ name: "", email: "" });
   let navigate = useNavigate();
   const id = useParams().id;
@@ -13,15 +14,17 @@ const EditContact = ({ editContactHandler }) => {
     setContact({ ...contact, [e.target.name]: e.target.value });
   };
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     if (!contact.name || !contact.email) {
       alert("all fields is mandatory !");
       return;
     }
     e.preventDefault();
-    editContactHandler(contact, id);
-    setContact({ name: "", email: "" });
-    navigate("/");
+
+    try {
+      await updateContact(id, contact);
+      navigate("/");
+    } catch (error) {}
   };
 
   useEffect(() => {

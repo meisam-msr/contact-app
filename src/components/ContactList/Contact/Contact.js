@@ -8,7 +8,7 @@ const Contact = ({ contact, onDelete }) => {
       <div style={{ display: "flex", alignItems: "center" }}>
         <img alt="user" src={userImage} />
         <Link to={`user/${id}`} state={{ contact: contact }}>
-          <div>
+          <div className="link">
             <p>name : {name}</p>
             <p>email : {email}</p>
           </div>
