@@ -27,6 +27,7 @@
 .item {
   background-color: #fff;
   min-width: 20rem;
+  width: 30rem;
   height: 4rem;
   display: flex;
   justify-content: space-between;
@@ -37,6 +38,7 @@
   margin-top: 20px;
 }
 .item button {
+  width: 60px;
   cursor: pointer;
   outline: none;
   color: #dc2626;
@@ -44,6 +46,11 @@
   background-color: #fff;
   padding: 6px 12px;
   border-radius: 6px;
+}
+.item .editBtn{
+  margin-right: 1rem;
+  border: 1px solid #7c3aed;
+  color: #7c3aed;
 }
 .item img {
   width: 24px;
