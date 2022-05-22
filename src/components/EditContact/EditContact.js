@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
-import getOneContact from "../../services/getOneCOntact";
+import getOneContact from "../../services/getOneContact";
 import updateContact from "../../services/updateContact";
 
 const EditContact = () => {
