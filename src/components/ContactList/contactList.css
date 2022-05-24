@@ -16,17 +16,22 @@
 }
 .listHeader button {
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58px;
+  height: 58px;
+  background-color: #f4f4f5;
+  color: #7c3aed;
   outline: none;
-  color: #fff;
-  border: none;
-  background-color: #7c3aed;
-  padding: 6px 12px;
-  border-radius: 6px;
+  border: 2px solid #7c3aed;
+  padding: 12px;
+  border-radius: 50%;
 }
 input {
   border: 1px solid #ccc;
   outline: none;
-  border-radius: 12px;
+  border-radius: 8px;
   width: 15rem;
   height: 3rem;
   padding: 6px 12px;
@@ -36,9 +41,9 @@ input:focus {
   border: 2px solid #7c3aed;
 }
 .item {
-  background-color: #fff;
+  background-color: #f4f4f5;
   min-width: 20rem;
-  width: 30rem;
+  width: 12rem;
   height: 4rem;
   display: flex;
   justify-content: space-between;
@@ -54,26 +59,32 @@ input:focus {
 .item .link {
   display: flex;
   flex-direction: column;
+  height: 42px;
+  justify-content: space-between;
   align-items: flex-start;
   margin-left: 5px;
+  color: #000;
 }
 .item button {
-  width: 60px;
+  width: 42px;
+  height: 42px;
   cursor: pointer;
   outline: none;
   color: #dc2626;
-  border: 1px solid #dc2626;
-  background-color: #fff;
-  padding: 6px 12px;
-  border-radius: 6px;
+  background: none;
+  border: none;
+  padding: 2px 4px;
 }
 .item .editBtn {
-  margin-right: 1rem;
-  border: 1px solid #7c3aed;
   color: #7c3aed;
 }
 .item img {
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 36px;
   margin-right: 6px;
+}
+@media only screen and (min-width: 768px) {
+  .item {
+    width: 30rem;
+  }
 }

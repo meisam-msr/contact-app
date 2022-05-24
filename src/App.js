@@ -8,7 +8,9 @@ import EditContact from "./components/EditContact/EditContact";
 function App() {
   return (
     <main className="App">
-      <h1>Contact App</h1>
+      <header>
+        <h1>Contact App</h1>
+      </header>
       <Routes>
         <Route path="add" element={<AddContact />} />
         <Route path="/" element={<ContactList />} />
